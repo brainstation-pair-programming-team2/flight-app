@@ -3,9 +3,12 @@ import { useState } from 'react';
 import Nav from '../../components/Nav/Nav';
 import SearchFlightForm from '../../components/SearchFlightForm/SearchFlightForm';
 import SearchRouteForm from '../../components/SearchRouteForm/SearchRouteForm';
+import Status from '../Status/Status';
+import { useNavigate } from 'react-router-dom';
 
 export default function Search() {
     const [searchMethod, setSearchMethod] = useState('number');
+    const navigate = useNavigate();
 
     const handleSearchMethod = (e) => {
         if (e.target.classList[0] === 'search__method-number') {
@@ -16,7 +19,11 @@ export default function Search() {
         }
     }
 
-    
+    const formHandler = (formData) => {
+        navigate('/status', { state: formData });
+    }
+
+
     return (
         <>
             <header>
@@ -30,7 +37,7 @@ export default function Search() {
                         <button className={`search__method-route ${searchMethod === 'route' ? 'search__method--selected' : ''}`} onClick={handleSearchMethod}>By Route</button>
                     </div>
                     <div className='search__input'>
-                        {searchMethod === 'number' ? <SearchFlightForm /> : <SearchRouteForm />}
+                        {searchMethod === 'number' ? <SearchFlightForm formHandler={formHandler} /> : <SearchRouteForm formHandler={formHandler} />}
                     </div>
                 </section>
             </main>

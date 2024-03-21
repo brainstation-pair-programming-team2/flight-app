@@ -1,6 +1,6 @@
 import './SearchFlightForm.scss'
 
-export default function SearchFlightForm() {
+export default function SearchFlightForm({formHandler}) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -29,7 +29,12 @@ export default function SearchFlightForm() {
         }
 
         if (isValid) {
-            
+            const formData = {
+                by: 'number',
+                flightNumber: inputs[0].value,
+                date: inputs[1].value
+            };
+            formHandler(formData);
         }
     };
 

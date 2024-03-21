@@ -1,6 +1,6 @@
 import './SearchRouteForm.scss'
 
-export default function SearchRouteForm() {
+export default function SearchRouteForm({formHandler}) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -29,7 +29,14 @@ export default function SearchRouteForm() {
         }
 
         if (isValid) {
-            
+            const formData = {
+                by: 'route',
+                from: inputs[0].value,
+                to: inputs[1].value,
+                airline: inputs[2].value,
+                date: inputs[3].value
+            }
+            formHandler(formData);
         }
     };
 
