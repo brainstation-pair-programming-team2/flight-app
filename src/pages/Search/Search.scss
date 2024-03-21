@@ -20,4 +20,22 @@
             background-color: $dark-blue;
         }
     }
+
+    &__img-container {
+        width: 40%;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__container {
+        display: flex;
+        width: 100%;
+
+        &__left {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
