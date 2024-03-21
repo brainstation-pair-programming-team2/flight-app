@@ -14,23 +14,24 @@ export default function Search() {
             setSearchMethod('route');
         }
     }
+    return (
+        <>
+            <header>
+                <Nav />
+            </header>
+            <main>
+                <section className='search'>
+                    <h1 className='search__title'>Search Flight</h1>
+                    <div className='search__method'>
+                        <button className='search__method-number' onClick={handleSearchMethod}>By Flight Number</button>
+                        <button className='search__method-route' onClick={handleSearchMethod}>By Route</button>
+                    </div>
+                    <div className='search__input'>
+                        {searchMethod === 'number' ? <SearchFlightForm /> : <SearchRouteForm />}
+                    </div>
+                </section>
+            </main>
 
-    <>
-        <header>
-            <Nav />
-        </header>
-        <main>
-            <section className='search'>
-                <h1 className='search__title'>Search Flight</h1>
-                <div className='search__method'>
-                    <button className='search__method-number' onClick={handleSearchMethod}>By Flight Number</button>
-                    <button className='search__method-route' onClick={handleSearchMethod}>By Route</button>
-                </div>
-                <div className='search__input'>
-                    {searchMethod === 'number' ? <SearchFlightForm /> : <SearchRouteForm />}
-                </div>
-            </section>
-        </main>
-
-    </>
+        </>
+    )
 }
