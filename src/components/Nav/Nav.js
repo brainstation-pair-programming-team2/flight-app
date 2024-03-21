@@ -6,9 +6,10 @@ export default function Nav({ selectedPage }) {
     return (
         <>
             <nav className='nav'>
-                <div className='nav__logo-container'>
-                    <img className='nav__logo' src={logo} />
-                </div>
+                <Link to='/' className='nav__logo-container'>
+                        <img className='nav__logo' src={logo} />
+
+                </Link>
                 <ul className='nav__pages'>
                     <Link
                         to='/'

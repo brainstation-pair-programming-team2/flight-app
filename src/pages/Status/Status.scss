@@ -1,0 +1,86 @@
+@use '../../styles/partials/global';
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+.status {
+    width: 100%;
+    padding: 0 10vw;
+    box-sizing: border-box;
+
+    &__container {
+        background-color: $Alabaster;
+        border-radius: 0.5rem;
+        border: 1px solid $black;
+        padding: 1.5rem;
+    }
+
+    &__flight {
+        width: 30vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__status {
+        &--green {
+            color: green;
+        }
+        &--blue {
+            color: $light-blue;
+        }
+        &--red {
+            color: $Error;
+        }
+
+    }
+
+    &__info-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__info {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__departure{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__arrival{
+        display: flex;
+        flex-direction: column;  
+        
+    }
+
+    &__progress-bar {
+        width: 50%;
+        height: 0.5rem;
+        background-color: $light-blue;
+        margin: 1rem 0;
+        position: relative;
+        border-radius: 0.25rem; 
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            width: 2rem;
+            height: 2rem;
+            background-image: url('../../assets/plane-icon.jpg');
+            background-size: cover;
+            border-radius: 50%;
+            border: 0.5px solid $black;
+        }
+    }
+
+    &__item {
+        margin: 0.5rem 0;
+    }
+}
