@@ -1,0 +1,23 @@
+@use '../../styles/partials/global';
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+.search {
+    padding: 0 10vw;
+    display: flex;
+    flex-direction: column;
+
+    width: 40vw;
+
+    &__method {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 3rem 0;
+
+        width: 40vw;
+
+        &--selected {
+            background-color: $dark-blue;
+        }
+    }
+}
