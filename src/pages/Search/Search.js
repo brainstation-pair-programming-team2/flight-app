@@ -17,7 +17,7 @@ export default function Search() {
     return (
         <>
             <header>
-                <Nav />
+                <Nav selectedPage={'search'}/>
             </header>
             <main>
                 <section className='search'>

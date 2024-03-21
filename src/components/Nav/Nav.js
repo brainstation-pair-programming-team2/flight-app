@@ -1,16 +1,30 @@
 import './Nav.scss'
-import logo from '../../assets/Logo/logo.png'
+import logo from '../../assets/logo/logo.png'
+import { Link } from 'react-router-dom'
 
-export default function Nav() {
+export default function Nav({ selectedPage }) {
     return (
         <>
             <nav className='nav'>
-                <div>
-                    <img className='nav__logo' src={logo}/>
+                <div className='nav__logo-container'>
+                    <img className='nav__logo' src={logo} />
                 </div>
                 <ul className='nav__pages'>
-                    <li className='nav__page'>Search</li>
-                    <li className='nav__page'>Airlines</li>
+                    <Link
+                        to='/'
+                        className={`nav__page ${selectedPage === 'search' ? "nav__page--selected" : ""}`}
+                    >
+                        <li className="nav__page">
+                            Search
+                        </li>
+                    </Link>
+                    <Link
+                        to='/airlines'
+                        className={`nav__page ${selectedPage === 'airlines' ? "nav__page--selected" : ""}`}>
+                        <li className="nav__page">
+                            Airlines
+                        </li>
+                    </Link>
                 </ul>
             </nav>
         </>
