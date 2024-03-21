@@ -15,6 +15,8 @@ export default function Search() {
             setSearchMethod('route');
         }
     }
+
+    
     return (
         <>
             <header>
